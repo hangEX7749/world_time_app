@@ -10,12 +10,23 @@ class ChooseLocation extends StatefulWidget {
 }
 
 class _ChooseLocationState extends State<ChooseLocation> {
+
+  void getData() async{
+    
+    await Future.delayed(const Duration(seconds: 3),() {
+      print('Mamarduker');
+    });
+
+    print('statement');
+  }
+
   int counter = 0;
 
   @override
   void initState() {
     super.initState();
-    print('initiate state function ran');
+    getData();
+    //print('initiate state function ran');
   }
 
   @override
