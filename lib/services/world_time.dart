@@ -7,6 +7,7 @@ class WorldTime {
   late String time;
   late String flag;
   late String url;
+  late bool isDayTime; // true or false if daytime or not
 
   WorldTime({required this.location, required this.flag, required this.url});
 
@@ -19,8 +20,6 @@ class WorldTime {
       //await get(Uri.parse("http://worldtimeapi.org/api/timezone/$url"));
       Map data = jsonDecode(response.body);
 
-      print(data);
-
       // Parse the datetime (assumes it's in UTC if no timezone is specified)
       DateTime parsedTime = DateTime.parse(data['dateTime']!);
 
@@ -30,6 +29,7 @@ class WorldTime {
 
       //set the time properly
       //time = adjustedTime.toString();
+      isDayTime = adjustedTime.hour > 6 && adjustedTime.hour < 20 ? true : false; // true or false if daytime or not
       time = DateFormat.jm().format(adjustedTime); // Format to 12-hour time
       
     } catch (e) {
