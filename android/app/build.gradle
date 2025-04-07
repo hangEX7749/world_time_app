@@ -23,6 +23,7 @@ if (flutterVersionName == null) {
 }
 
 android {
+    compileSdkVersion 29
     namespace "com.example.world_time_app"
     compileSdk flutter.compileSdkVersion
     ndkVersion flutter.ndkVersion

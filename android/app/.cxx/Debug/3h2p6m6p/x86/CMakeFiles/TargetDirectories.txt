@@ -1,0 +1,2 @@
+C:/Mobile/world_time_app/android/app/.cxx/Debug/3h2p6m6p/x86/CMakeFiles/edit_cache.dir
+C:/Mobile/world_time_app/android/app/.cxx/Debug/3h2p6m6p/x86/CMakeFiles/rebuild_cache.dir

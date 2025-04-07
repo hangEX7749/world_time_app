@@ -1,0 +1,2 @@
+C:/Mobile/world_time_app/android/app/.cxx/Debug/3h2p6m6p/armeabi-v7a/CMakeFiles/edit_cache.dir
+C:/Mobile/world_time_app/android/app/.cxx/Debug/3h2p6m6p/armeabi-v7a/CMakeFiles/rebuild_cache.dir
