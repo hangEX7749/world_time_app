@@ -1,5 +1,6 @@
 import 'dart:convert';
 import 'package:http/http.dart';
+import 'package:intl/intl.dart';
 // ignore_for_file: avoid_print
 class WorldTime {
   late String location;
@@ -20,17 +21,17 @@ class WorldTime {
 
       print(data);
 
-
-
       // Parse the datetime (assumes it's in UTC if no timezone is specified)
       DateTime parsedTime = DateTime.parse(data['dateTime']!);
 
       // Apply the UTC offset (e.g., +2 hours for CEST)
-      const utcOffset = Duration(hours: 6); // From dstActive: true
+      const utcOffset = Duration(hours: 0); // From dstActive: true
       final adjustedTime = parsedTime.add(utcOffset);
 
       //set the time properly
-      time = adjustedTime.toString();
+      //time = adjustedTime.toString();
+      time = DateFormat.jm().format(adjustedTime); // Format to 12-hour time
+      
     } catch (e) {
       print('caught error: $e');
       time = 'Could not get time data';
