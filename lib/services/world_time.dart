@@ -7,7 +7,7 @@ class WorldTime {
   late String time;
   late String flag;
   late String url;
-  late bool isDayTime; // true or false if daytime or not
+  bool isDayTime = false; // true or false if daytime or not
 
   WorldTime({required this.location, required this.flag, required this.url});
 
@@ -15,7 +15,10 @@ class WorldTime {
     try {
       //make the request
       Response response =
-          await get(Uri.parse("https://www.timeapi.io/api/time/current/zone?timeZone=$url"));
+          await get(Uri.parse("https://timeapi.io/api/time/current/zone?timeZone=$url"));
+
+      // print("Status Code: ${response.statusCode}");
+      // print("Response: ${response.body}");
 
       //await get(Uri.parse("http://worldtimeapi.org/api/timezone/$url"));
       Map data = jsonDecode(response.body);
